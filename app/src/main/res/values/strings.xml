@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PriorityQ</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="title_dequeue">Dequeue</string>
+    <string name="title_enqueue">Add</string>
+    <string name="title_task_list">Task List</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Enter Priority</string>
+    <string name="duration_prompt_text">Enter Duration</string>
+    <string name="name_prompt_text">Enter Name of Task</string>
+</resources>

@@ -1,0 +1,66 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="priorityq.chrisli8.washington.edu.priorityq.AddTaskFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="@string/name_prompt_text" />
+
+        <EditText
+            android:id="@+id/name_response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_prompt"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Enter Name of task"/>
+
+        <TextView
+            android:id="@+id/priority_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_response"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="@string/hello_blank_fragment" />
+
+        <EditText
+            android:id="@+id/priority_response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/priority_prompt"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Enter numeric (e.g. 1) ..."/>
+
+        <TextView
+            android:id="@+id/duration_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/priority_response"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="@string/duration_prompt_text" />
+
+        <EditText
+            android:id="@+id/duration_response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/duration_prompt"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Enter Time in minutes (e.g. 1) ..."/>
+    </RelativeLayout>
+
+</FrameLayout>
