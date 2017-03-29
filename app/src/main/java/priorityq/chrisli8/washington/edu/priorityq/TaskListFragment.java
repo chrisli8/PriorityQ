@@ -59,6 +59,9 @@ public class TaskListFragment extends Fragment {
                 new TaskItem(6, 5, "Task6"),
                 new TaskItem(7, 20, "Task7"),
                 new TaskItem(8, 15, "Task8"),
+                new TaskItem(8, 15, "Task9"),
+                new TaskItem(8, 15, "Task10"),
+                new TaskItem(8, 15, "Task11"),
         };
 
         // Define a new Adapter
