@@ -15,6 +15,7 @@ import android.widget.ListView;
  */
 public class TaskListFragment extends Fragment {
     public ListView listView;
+    public MyAdapter adapter;
 
     public TaskListFragment() {
         // Required empty public constructor
@@ -50,6 +51,7 @@ public class TaskListFragment extends Fragment {
                 "More Stuff"
         };
 
+        // Retired for array list instead
         TaskItem[] tasks = new TaskItem[] {
                 new TaskItem(1, 4, "Task1"),
                 new TaskItem(2, 10, "Task2"),
@@ -74,9 +76,10 @@ public class TaskListFragment extends Fragment {
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(),
 //                android.R.layout.simple_list_item_1, android.R.id.text1, values);
 
+        adapter = new MyAdapter(this.getContext(), MainApp.getInstance().getList());
 
         // Assign adapter to ListView
-        listView.setAdapter(new MyAdapter(this.getContext(), tasks));
+        listView.setAdapter(adapter);
     }
 
 }

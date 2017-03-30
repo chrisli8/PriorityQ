@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import java.util.*;
 
 import org.w3c.dom.Text;
 
@@ -16,10 +17,10 @@ import org.w3c.dom.Text;
 public class MyAdapter extends BaseAdapter {
 
     Context context;
-    TaskItem[] data;
+    ArrayList<TaskItem> data;
     private static LayoutInflater inflater = null;
 
-    public MyAdapter(Context context, TaskItem[] data) {
+    public MyAdapter(Context context, ArrayList<TaskItem> data) {
         // TODO Auto-generated constructor stub
         this.context = context;
         this.data = data;
@@ -30,13 +31,13 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return data.length;
+        return data.size();
     }
 
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
-        return data[position];
+        return data.get(position);
     }
 
     @Override
@@ -54,15 +55,15 @@ public class MyAdapter extends BaseAdapter {
 
         // Set Header
         TextView text = (TextView) vi.findViewById(R.id.listitem_header);
-        text.setText(data[position].getTaskName());
+        text.setText(data.get(position).getTaskName());
 
         // Set Priority
         TextView priority = (TextView) vi.findViewById(R.id.listitem_priority);
-        priority.setText("" + data[position].getPriority()); // String concat to prevent errors
+        priority.setText("" + data.get(position).getPriority()); // String concat to prevent errors
 
         // Set Duration
         TextView duration = (TextView) vi.findViewById(R.id.listitem_time);
-        duration.setText("" + data[position].getDuration() + " min"); // String concat to prevent errors
+        duration.setText("" + data.get(position).getDuration() + " min"); // String concat to prevent errors
 
         return vi;
     }

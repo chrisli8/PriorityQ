@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private MyHeap tasks;
     private FragmentManager fragManager;
 
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
