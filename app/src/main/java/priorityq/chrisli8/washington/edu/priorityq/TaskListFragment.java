@@ -1,6 +1,7 @@
 package priorityq.chrisli8.washington.edu.priorityq;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
 
 
 /**
@@ -33,36 +38,13 @@ public class TaskListFragment extends Fragment {
         // Get ListView object from xml
         listView = (ListView) view.findViewById(R.id.list);
 
-        // Defined Array values to show in ListView
-        String[] values = new String[] { "Android List View",
-                "Adapter implementation",
-                "Simple List View In Android",
-                "Create List View Android",
-                "Android Example",
-                "List View Source Code",
-                "List View Array Adapter",
-                "Android Example List View",
-                "More Stuff",
-                "More Stuff",
-                "More Stuff",
-                "More Stuff",
-                "More Stuff",
-                "More Stuff"
-        };
-
-        TaskItem[] tasks = new TaskItem[] {
-                new TaskItem(1, 4, "Task1"),
-                new TaskItem(2, 10, "Task2"),
-                new TaskItem(3, 30, "Task2"),
-                new TaskItem(4, 1, "Task4"),
-                new TaskItem(5, 3, "Task5"),
-                new TaskItem(6, 5, "Task6"),
-                new TaskItem(7, 20, "Task7"),
-                new TaskItem(8, 15, "Task8"),
-                new TaskItem(8, 15, "Task9"),
-                new TaskItem(8, 15, "Task10"),
-                new TaskItem(8, 15, "Task11"),
-        };
+        final Activity act = getActivity();
+        List<TaskItem> taskList;
+        if (act instanceof MainActivity) {
+            taskList = ((MainActivity) act).getAllTasksFromDB();
+        } else {
+            taskList = new ArrayList<TaskItem>();
+        }
 
         // Define a new Adapter
         // First parameter - Context
@@ -76,7 +58,8 @@ public class TaskListFragment extends Fragment {
 
 
         // Assign adapter to ListView
-        listView.setAdapter(new MyAdapter(this.getContext(), tasks));
+        listView.setAdapter(new MyAdapter(this.getContext(), new
+                PriorityQueue<TaskItem>(taskList)));
     }
 
 }
