@@ -23,8 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/name_prompt"
             android:ems="10"
-            android:inputType="number"
-            android:hint="Enter Name of task"/>
+            android:hint="Enter Name of task"
+            android:inputType="text"/>
 
         <TextView
             android:id="@+id/priority_prompt"
@@ -61,6 +61,13 @@
             android:ems="10"
             android:inputType="number"
             android:hint="Enter Time in minutes (e.g. 1) ..."/>
+
+        <Button
+            android:id="@+id/save_task_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save task" />
+
     </RelativeLayout>
 
 </FrameLayout>
