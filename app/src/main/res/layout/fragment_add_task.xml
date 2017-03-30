@@ -5,9 +5,11 @@
     tools:context="priorityq.chrisli8.washington.edu.priorityq.AddTaskFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/name_prompt"
@@ -68,6 +70,6 @@
             android:layout_height="wrap_content"
             android:text="Save task" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </FrameLayout>
