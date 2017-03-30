@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.PriorityQueue;
+
 /**
  * Created by ChrisLi on 3/29/17.
  */
@@ -16,10 +18,10 @@ import org.w3c.dom.Text;
 public class MyAdapter extends BaseAdapter {
 
     Context context;
-    TaskItem[] data;
+    PriorityQueue<TaskItem> data;
     private static LayoutInflater inflater = null;
 
-    public MyAdapter(Context context, TaskItem[] data) {
+    public MyAdapter(Context context, PriorityQueue<TaskItem> data) {
         // TODO Auto-generated constructor stub
         this.context = context;
         this.data = data;
@@ -30,13 +32,13 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return data.length;
+        return data.size();
     }
 
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
-        return data[position];
+        return data.toArray()[position];
     }
 
     @Override
@@ -54,15 +56,17 @@ public class MyAdapter extends BaseAdapter {
 
         // Set Header
         TextView text = (TextView) vi.findViewById(R.id.listitem_header);
-        text.setText(data[position].getTaskName());
+        text.setText(((TaskItem) this.getItem(position)).getTaskName());
 
         // Set Priority
         TextView priority = (TextView) vi.findViewById(R.id.listitem_priority);
-        priority.setText("" + data[position].getPriority()); // String concat to prevent errors
+        priority.setText("" + ((TaskItem) this.getItem(position)).getPriority
+                ());
+        // String concat to prevent errors
 
         // Set Duration
         TextView duration = (TextView) vi.findViewById(R.id.listitem_time);
-        duration.setText("" + data[position].getDuration() + " min"); // String concat to prevent errors
+        duration.setText("" + ((TaskItem) this.getItem(position)).getDuration() + " min"); // String concat to prevent errors
 
         return vi;
     }
